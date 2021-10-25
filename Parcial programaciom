@@ -1,0 +1,67 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+#define TAM 5
+
+
+
+float aplicarDescuento(float precioProducto);
+int contarCaracteres(char cadena[], char caracter, int tam);
+
+int main()
+{
+   int precio = 100;
+   float descuento;
+   
+   char string[TAM] = "coco";
+   char caracter ='c';
+   int cantidad;
+   
+   descuento = aplicarDescuento(precio);
+   
+   printf("descuento: %.2f\n",descuento);
+   
+   cantidad= contarCaracteres(string,caracter,TAM);
+   
+   printf("cantidad del caracter c es: %d", cantidad);
+   
+   
+
+    return 0;
+}
+
+float aplicarDescuento(float precioProducto)
+{
+    int valorProducto;
+    
+    if(precioProducto>0)
+    {
+        valorProducto=precioProducto*0.05;
+    }
+    
+     
+    
+ 
+    return valorProducto;
+}
+
+int contarCaracteres(char cadena[], char caracter, int tam)
+{
+    int contador=0;
+    
+    if(cadena != NULL && tam)
+    {
+         for(int i=0; i<tam; i++)
+    {
+        if(cadena[i] == caracter)
+        {
+            contador++;
+        }
+    }
+    }
+   
+    
+    return contador;
+}
+
